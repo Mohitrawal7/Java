@@ -21,9 +21,17 @@ class FirstClass {
 
       //code
       Scanner sc = new Scanner(System.in);
-      int a = sc.nextInt();
+     /* int a = sc.nextInt();
       int b = sc.nextInt();
       int sum = a+b;
       System.out.println(sum);
+	*/
+	//conditional 
+	int age = sc.nextInt();
+	if(age>=18){
+	System.out.println("Adult");	
+	} else {
+	 System.out.println("Not Adult");
+	}
     }
 }
