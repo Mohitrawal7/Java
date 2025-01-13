@@ -3,7 +3,7 @@ package org.example;
 public class Dev {
 
 private Computer comp ;
-private int age;
+
 
 public Dev(){
     System.out.println("dev constructor");
