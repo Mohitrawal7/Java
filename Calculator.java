@@ -10,7 +10,8 @@ class Calculator {
  double result;
  result = sc.nextDouble();
  System.out.println("Enter the operation");
-  op = input.next().charAt(0);
+  Scanner input;
+    op = input.next().charAt(0);
  switch(op){
  case "+" : int sum = a+b;
  System.out.println(sum);
