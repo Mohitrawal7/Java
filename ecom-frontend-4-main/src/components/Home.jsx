@@ -8,7 +8,9 @@ const Home = ({ selectedCategory }) => {
   const [products, setProducts] = useState([]);
   const [isDataFetched, setIsDataFetched] = useState(false);
 
+
   useEffect(() => {
+  
     if (!isDataFetched) {
       refreshData();
       setIsDataFetched(true);
@@ -22,16 +24,17 @@ const Home = ({ selectedCategory }) => {
         const updatedProducts = await Promise.all(
           data.map(async (product) => {
             if (!product.id) {
-               console.error('Undefined product ID:', product);
-                return { ...product, imageUrl: "placeholder-image-url" }; 
-          }
+              console.error('Undefined product ID:', product);
+               return { ...product, imageUrl: "placeholder-image-url" }; 
+         }
+
 
             try {
               const response = await axios.get(
                 `http://localhost:8080/api/product/${product.id}/image`,
                 { responseType: "blob" }
               );
-              console.log(response.data)
+             
               const imageUrl = URL.createObjectURL(response.data);
               return { ...product, imageUrl };
             } catch (error) {

@@ -140,6 +140,7 @@ import java.util.Date;
 public class Product {
 
     @Id
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
