@@ -8,9 +8,9 @@ const AddProduct = () => {
     description: "",
     price: "",
     category: "",
-    stockQuantity: "",
     releaseDate: "",
     productAvailable: false,
+    stockQuantity: "",
   });
   const [image, setImage] = useState(null);
 

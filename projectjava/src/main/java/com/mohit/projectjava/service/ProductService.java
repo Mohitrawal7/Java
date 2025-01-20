@@ -15,8 +15,9 @@ public class ProductService{
     @Autowired
     private ProductRepo repo;
 
+
     public List<Product> getAllProducts() {
-    return repo.findAll();
+        return repo.findAll();
     }
 
     public Product getProductById(int id) {
@@ -26,10 +27,11 @@ public class ProductService{
 
 
     public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
-    product.setImageName(imageFile.getOriginalFilename());
-    product.setImageType(imageFile.getContentType());
-    product.setImageData(imageFile.getBytes());
-      return repo.save(product);
+        product.setImageName(imageFile.getOriginalFilename());
+        product.setImageType(imageFile.getContentType());
+        product.setImageData(imageFile.getBytes());
+
+        return repo.save(product);
     }
 
 }
