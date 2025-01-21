@@ -1,13 +1,14 @@
 package com.mohit.SpringSecurity;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
     @GetMapping("/")
-    public String greet(){
-        return "Welcome to Mohit";
+    public String greet(HttpServletRequest request){
+        return "Welcome to Mohit " + request.getSession().getId();
     }
 
 }
