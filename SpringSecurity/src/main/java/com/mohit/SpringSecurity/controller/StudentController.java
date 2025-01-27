@@ -18,7 +18,8 @@ public class StudentController {
     private  List<Student> students = new ArrayList<>(
             List.of(
             new Student(1,"Mohit", 70),
-            new Student(2,"Asmita",80)
+            new Student(2,"Asmita",80),
+            new Student(3,"Shreya",86)
     ));
 
     @GetMapping("/students")
