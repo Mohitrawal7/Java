@@ -1,6 +1,7 @@
-package com.mohit.SpringSecurity;
+package com.mohit.SpringSecurity.controller;
 
 
+import com.mohit.SpringSecurity.model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +15,10 @@ import java.util.List;
 @RestController
 public class StudentController {
 
-    private  List<Student> students = new ArrayList<>(List.of(
+    private  List<Student> students = new ArrayList<>(
+            List.of(
             new Student(1,"Mohit", 70),
-            new Student(2,"asmita",80)
+            new Student(2,"Asmita",80)
     ));
 
     @GetMapping("/students")
