@@ -9,6 +9,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -24,6 +26,7 @@ public class UserService {
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
     public Users register(Users user){
+        user.setUsername(user.getUsername());
         user.setPassword(encoder.encode(user.getPassword()));
     return repo.save(user);
     }
@@ -34,5 +37,10 @@ public class UserService {
             return jwtService.generateToken(user.getUsername());
 
         return "fail";
+    }
+
+    public List<Users> getall() {
+        return repo.findAll();
+
     }
 }

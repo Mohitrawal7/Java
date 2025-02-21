@@ -33,5 +33,6 @@ class FirstClass {
 	} else {
 	 System.out.println("Not Adult");
 	}
+  sc.close();
     }
 }

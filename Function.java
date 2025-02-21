@@ -20,7 +20,7 @@ zero++;
 System.out.println("Positive = " + positive);
 System.out.println("Negative = " + negative);
 System.out.print("Zero = " + zero);
-
+sc.close();
  }
 
 }

@@ -13,12 +13,18 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api")
+@CrossOrigin
 public class ProductController {
 
     @Autowired
     private ProductService service;
+
+//   @RequestMapping
+   @RequestMapping("/hello")
+    public String hello() {
+       return "Hello man killing it";
+    }
 
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts() {
