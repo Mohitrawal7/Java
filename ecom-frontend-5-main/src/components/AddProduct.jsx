@@ -14,8 +14,10 @@ const AddProduct = () => {
   });
   const [image, setImage] = useState(null);
 
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
     setProduct({ ...product, [name]: value });
   };
 
@@ -150,7 +152,7 @@ const AddProduct = () => {
             <h6>Release Date</h6>
           </label>
           <input
-            type="date"
+            type="datetime-local"
             className="form-control"
             value={product.releaseDate}
             name="releaseDate"
@@ -158,6 +160,7 @@ const AddProduct = () => {
             id="releaseDate"
           />
         </div>
+       
         {/* <input className='image-control' type="file" name='file' onChange={(e) => setProduct({...product, image: e.target.files[0]})} />
     <button className="btn btn-primary" >Add Photo</button>  */}
         <div className="col-md-4">
