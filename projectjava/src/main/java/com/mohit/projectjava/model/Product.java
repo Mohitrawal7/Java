@@ -2,17 +2,18 @@ package com.mohit.projectjava.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
 @Data
+@Builder
 public class Product {
 
     @Id

@@ -1,7 +1,9 @@
 package com.mohit.projectjava.controller;
 
+import com.mohit.projectjava.dto.ProductDto;
 import com.mohit.projectjava.model.Product;
 import com.mohit.projectjava.service.ProductService;
+import com.mohit.projectjava.service.impl.ProductImplService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +20,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductService service;
+    private ProductImplService service;
 
 //   @RequestMapping
    @RequestMapping("/hello")
@@ -27,7 +29,7 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getAllProducts() {
+    public ResponseEntity<List<ProductDto>> getAllProducts() {
         return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
     }
 
@@ -43,10 +45,10 @@ public class ProductController {
     }
 
     @PostMapping("/product")
-    public ResponseEntity<?> addProduct(@RequestPart Product product,@RequestPart MultipartFile imageFile) {
+    public ResponseEntity<?> addProduct(@RequestPart ProductDto dto,@RequestPart MultipartFile imageFile) {
         try {
-            System.out.println(product);
-            Product product1 = service.addProduct(product, imageFile);
+            System.out.println(dto);
+            Product product1 = service.addProduct(dto, imageFile);
 
             return new ResponseEntity<>(product1, HttpStatus.CREATED);
         } catch (Exception e) {
