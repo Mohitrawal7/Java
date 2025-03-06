@@ -1,5 +1,4 @@
 package com.mohit.projectjava.service;
-import com.mohit.projectjava.dto.ProductDto;
 import com.mohit.projectjava.model.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,9 +11,9 @@ public interface ProductService  {
 
 
 
-    Product addProduct(ProductDto dto, MultipartFile imagefile) throws IOException;
+    Product addProduct(Product product, MultipartFile imagefile) throws IOException;
 
-    List<ProductDto> getAllProducts();
+    List<Product> getAllProducts();
 
     Product getProductById(int id);
 

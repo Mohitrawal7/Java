@@ -1,6 +1,5 @@
 package com.mohit.projectjava.controller;
 
-import com.mohit.projectjava.dto.ProductDto;
 import com.mohit.projectjava.model.Product;
 import com.mohit.projectjava.service.ProductService;
 import com.mohit.projectjava.service.impl.ProductImplService;
@@ -29,7 +28,7 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public ResponseEntity<List<ProductDto>> getAllProducts() {
+    public ResponseEntity<List<Product>> getAllProducts() {
         return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
     }
 
@@ -45,10 +44,10 @@ public class ProductController {
     }
 
     @PostMapping("/product")
-    public ResponseEntity<?> addProduct(@RequestPart ProductDto dto,@RequestPart MultipartFile imageFile) {
+    public ResponseEntity<?> addProduct(@RequestPart Product product,@RequestPart MultipartFile imageFile) {
         try {
-            System.out.println(dto);
-            Product product1 = service.addProduct(dto, imageFile);
+            System.out.println(product);
+            Product product1 = service.addProduct(product, imageFile);
 
             return new ResponseEntity<>(product1, HttpStatus.CREATED);
         } catch (Exception e) {
